@@ -12,7 +12,7 @@ struct ContentView: View {
     @State var height_res=0.00
     @State var bit_tes=0.00
     var body: some View {
-        Text("Physics formulas")
+        ScrollView{VStack{Text("Physics formulas")
             .font(.title)
             .padding()
             .foregroundColor(.blue)
@@ -20,7 +20,9 @@ struct ContentView: View {
             .resizable()
             .frame(width:150,height:150)
             .padding()
-        VStack{
+        ScrollView{
+            
+            VStack{
         Text("Mass to weight converter")
                 .font(.headline)
             Text("Mass(in Kg)")
@@ -78,6 +80,8 @@ struct ContentView: View {
             
             
     }
+            .border(Color.red, width:3)
+        }
         Text("Bonus computer science equations")
             .font(.title)
             .padding()
@@ -87,7 +91,8 @@ struct ContentView: View {
             .frame(width:150,height:150)
             .padding()
         
-        VStack{
+        ScrollView{
+            VStack{
             Text("Image size calculator")
                 .font(.headline)
             Text("Width, Height, Colour depth(in Bytes)")
@@ -110,7 +115,14 @@ struct ContentView: View {
                 
                 
             }
+            .border(Color.blue,width:2)
         }
+            
+        }
+    }
+    
+}
+        
     }
     
 }
