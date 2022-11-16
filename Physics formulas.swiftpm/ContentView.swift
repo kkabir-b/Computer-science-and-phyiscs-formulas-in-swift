@@ -11,8 +11,17 @@ struct ContentView: View {
     @State var w_dith=0.00
     @State var height_res=0.00
     @State var bit_tes=0.00
+        
     var body: some View {
-        ScrollView{VStack{Text("Physics formulas")
+        
+        ZStack{
+            Rectangle()
+                .fill(.clear)
+                .background(
+                    LinearGradient(gradient: Gradient(colors: [.blue,.green,.red, .purple]), startPoint: .top, endPoint: .bottom)
+                )
+                .opacity(0.4)
+            ScrollView{VStack{Text("Physics formulas")
             .font(.title)
             .padding()
             .foregroundColor(.blue)
@@ -93,10 +102,12 @@ struct ContentView: View {
         
         ScrollView{
             VStack{
+                
             Text("Image size calculator")
                 .font(.headline)
             Text("Width, Height, Colour depth(in Bytes)")
             HStack{
+                
                 TextField("Please enter the height",value: $w_dith, format: .number)
                     .textFieldStyle(.roundedBorder)
                     .border(.green, width: 5)
@@ -122,9 +133,10 @@ struct ContentView: View {
     }
     
 }
-        
+            
+            
     }
-    
+    }
 }
 
 
